@@ -124,7 +124,10 @@ etrd_account_balance = function(account,
 #' \dontrun{
 #'
 #' account_id = etrd_account_list()$accountIdKey[1]
-#' etrd_account_portfolio(account_id)
+#' et_act_details = etrd_account_portfolio(account_id)
+#' # Convert list to a data frame
+#' positions = dplyr::bind_rows(lapply(et_act_details$AccountPortfolio[[1]]$Position,
+#'                                    function(x) {data.frame(x)}))
 #'
 #' }
 etrd_account_portfolio = function(account,

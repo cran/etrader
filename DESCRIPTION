@@ -1,15 +1,15 @@
 Package: etrader
 Title: 'ETRADE' API Interface for R
-Version: 0.1.2
-Author: Tony Trevisan [aut, cre]
+Version: 0.1.3
+Author: Anthony Balentine [aut, cre]
 Authors@R: 
-    person(given = "Tony",
-           family = "Trevisan",
+    person(given = "Anthony",
+           family = "Balentine",
            role = c("aut", "cre"),
-           email = "anthonytrevisan@gmail.com")
-Maintainer: Tony Trevisan <anthonytrevisan@gmail.com>
-URL: https://tonytrevisan.github.io/etrader/
-BugReports: https://github.com/tonytrevisan/etrader/issues
+           email = "exploringfinance1@gmail.com")
+Maintainer: Anthony Balentine <exploringfinance1@gmail.com>
+URL: https://exploringfinance.github.io/etrader/
+BugReports: https://github.com/exploringfinance/etrader/issues
 Description: Use R to interface with the 'ETRADE' API <https://developer.etrade.com/home>.
     Functions include authentication, trading, quote requests, account information, and option 
     chains. A user will need an ETRADE brokerage account and 'ETRADE' API approval. See README 
@@ -21,6 +21,6 @@ Imports: magrittr, httr, urltools, dplyr, rvest, purrr, jsonlite
 RoxygenNote: 7.1.1
 Suggests: testthat
 NeedsCompilation: no
-Packaged: 2020-11-25 12:53:53 UTC; rstudio
+Packaged: 2021-02-22 01:03:20 UTC; rstudio
 Repository: CRAN
-Date/Publication: 2020-11-26 16:20:02 UTC
+Date/Publication: 2021-02-22 13:50:12 UTC

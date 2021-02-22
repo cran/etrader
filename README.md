@@ -7,18 +7,16 @@
 
 ![CRAN
 Version](https://www.r-pkg.org/badges/version/etrader?color=green) ![Dev
-Version](https://img.shields.io/badge/github-0.1.1-blue.svg)
+Version](https://img.shields.io/badge/github-0.1.3-blue.svg)
+![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/etrader)
 <!-- badges: end -->
 
 R package for the ETRADE API, facilitating authentication, trading,
 pricing data, account balances, positions, order history, option chains,
-and more. If you don’t already have an ETRADE brokerage account, feel
-free to use my [referral
-link](https://refer.etrade.net/anthonytrevisan). After creating an
-account, obtain [developer authorization
+and more. After creating an account, obtain [developer authorization
 keys](https://developer.etrade.com/getting-started) to use the API. This
 package was built for personal use tokens not vendor tokens. See this
-[article](https://tonytrevisan.github.io/posts/2020-11-21-the-ultimate-dollar-cost-averaging-strategy/)
+[article](https://exploringfinance.github.io/posts/2020-11-21-the-ultimate-dollar-cost-averaging-strategy/)
 for a full example of obtaining keys, logging in, and automating a trade
 strategy in production.
 
@@ -44,12 +42,12 @@ what was entered. The sandbox is to verify the entry is valid.
 You can install etrader using:
 
 ``` r
-# Not yet submitted to CRAN
-# install.packages("etrader")
+# Available on CRAN
+install.packages("etrader")
 
-# Install development version
+# Install development version - same as CRAN
 # install.packages("devtools")
-devtools::install_github("tonytrevisan/etrader")
+devtools::install_github("exploringfinance/etrader")
 
 ```
 
@@ -61,7 +59,7 @@ site](https://developer.etrade.com/getting-started). To use the API, the
 user will need to manually log into their ETRADE account at least once a
 day; however, this can be automated using `RSelenium` and `Docker` as
 shown in this
-[article](https://tonytrevisan.github.io/posts/2020-11-21-the-ultimate-dollar-cost-averaging-strategy/).
+[article](https://exploringfinance.github.io/posts/2020-11-21-the-ultimate-dollar-cost-averaging-strategy/).
 
 Once authorization tokens have been obtained, authentication can be
 achieved in three simple steps: setting credentials, generating a login

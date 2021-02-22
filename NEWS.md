@@ -1,10 +1,15 @@
-# etrader 0.1.2
+# etrader 0.1.3
 
 ## Release Notes and News
 
+### etrader 0.1.3 02/21/2021
+
+Change Maintainer and added example under
+portfolio to convert list to a data frame
+
 ### etrader 0.1.2 11/25/2020
 
-Fixes for CRAN.
+Fixes for CRAN. Released with commit f5045f0.
 
 ### etrader 0.1.1 11/23/2020
 
