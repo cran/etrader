@@ -49,20 +49,8 @@ etrd_get_url = function(etrade_url,
 # Turn signature into a text string for header
 hlp_etrd_auth_headers = function(signature) {
 
-  # collapse into a single authorization string for header
-  # sign_string = paste0('OAuth\n ',paste0(names(unlist(signature)),'="',unlist(signature),collapse = '",'))
-  . <- vals <- cols <- NULL
-  list_to_df = data.frame('vals' = unlist(signature)) %>%
-    dplyr::mutate(cols = row.names(.),
-                  # Convert oauth items into URL encoded text
-                  vals = ifelse(cols %in% c('oauth_signature','oauth_nonce','oauth_token'),
-                                urltools::url_encode(vals),as.character(vals)),
-                  string = paste0(cols,'="',vals,'"'))
-
-  # collapse into a single authorization string for header
-  sign_string = paste0('OAuth\n ',paste0(list_to_df$string,collapse = ','))
-
-  httr::add_headers('Authorization' = sign_string)
+  ### Use httr header signature
+  httr::oauth_header(signature)
 
 }
 
@@ -97,7 +85,7 @@ hlp_etrd_check_cred <- function(etrade_cred, sandbox) {
     # check that credentials were created using etrd_auth_credentials
     ErrMsg = paste0('Incorrect object type passed as credentials. ',
                     'Please pass the output from `etrd_auth_credentials` using a valid ETrade key and secret.')
-    if (class(etrade_cred) != 'oauth_app') stop(ErrMsg, call. = FALSE)
+    if (!methods::is(etrade_cred, 'oauth_app')) stop(ErrMsg, call. = FALSE)
 
     return(etrade_cred)
   }
@@ -131,7 +119,7 @@ hlp_etrd_check_acctok <- function(access_tokens, sandbox) {
     # check that credentials were created using etrd_auth_credentials
     ErrMsg = paste0('Incorrect object type passed as Access Token. ',
                     'Please pass the output from `etrd_auth_access_token`.')
-    if (class(access_tokens) != 'list') stop(ErrMsg, call. = FALSE)
+    if (!methods::is(access_tokens, 'list')) stop(ErrMsg, call. = FALSE)
     if (length(access_tokens) != 4) stop(ErrMsg, call. = FALSE)
 
     return(access_tokens)
